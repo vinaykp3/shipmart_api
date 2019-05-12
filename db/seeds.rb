@@ -1,0 +1,21 @@
+user = Role.create(name: 'User')
+admin = Role.create(name: 'Admin')
+
+user1 = User.create(name: "Aanand", email: ENV['USER1'], role_id: user.id)
+user2 = User.create(name: "William", email: ENV['USER2'], role_id: user.id)
+user3 = User.create(name: "George", email: ENV['USER3'], role_id: user.id)
+admin = User.create(name: "admin", email: ENV['ADMIN'], role_id: admin.id)
+
+product1 = Product.create(name: "Prodouct1", description: 'user1 posted product1', price: "100", user_id: user1.id)
+product2 = Product.create(name: "Prodouct2", description: 'user1 posted product2', price: "200", user_id: user1.id)
+product3 = Product.create(name: "Prodouct3", description: 'user2 posted product3', price: "10", user_id: user2.id)
+product4 = Product.create(name: "Prodouct4", description: 'user2 posted product4', price: "20", user_id: user2.id)
+product5 = Product.create(name: "Prodouct5", description: 'user3 posted product5', price: "50", user_id: user3.id)
+product6 = Product.create(name: "Prodouct6", description: 'user3 posted product6', price: "70", user_id: user3.id)
+
+ProductTransaction.create(product_id: product1.id, user_id: user3.id)
+ProductTransaction.create(product_id: product2.id, user_id: user3.id)
+ProductTransaction.create(product_id: product3.id, user_id: user3.id)
+ProductTransaction.create(product_id: product4.id, user_id: user1.id)
+ProductTransaction.create(product_id: product5.id, user_id: user1.id)
+ProductTransaction.create(product_id: product6.id, user_id: user2.id)
