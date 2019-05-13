@@ -1,5 +1,7 @@
 # README
 
+* API is designed by keeping in mind the response should include the error messages in it's body so that user will come to know what went wrong.
+
 * Prerequisites
 	
 	- Make sure ruby 2.5.1 is installed
